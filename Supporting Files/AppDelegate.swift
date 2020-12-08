@@ -14,11 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let main = GameVC(viewModel: GameVM())
+        let appCoordinator = AppCoordinator()
         window = UIWindow()
         
-        self.window?.rootViewController = UINavigationController(rootViewController: main)
-        self.window?.makeKeyAndVisible()
+        appCoordinator.start()
         
         return true
     }
